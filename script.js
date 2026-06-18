@@ -1,5 +1,5 @@
 /* ============================================================
-   ChronoType — script.js
+   GuessTyper — script.js
    Core typing-test logic with comprehensive keystroke biometric
    data collection for ML research.
 
