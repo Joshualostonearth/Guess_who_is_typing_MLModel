@@ -173,5 +173,5 @@ app.post('/api/log', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n  ChronoType server running at http://localhost:${PORT}\n`);
+  console.log(`\n   server running at http://localhost:${PORT}\n`);
 });
