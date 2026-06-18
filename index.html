@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="ChronoType — A minimalist, dynamic typing speed test with keystroke biometric analysis. Measure your WPM, accuracy, timing patterns, and behavioral profile." />
+  <title>ChronoType — Typing Speed Test</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="app-container">
+
+    <header id="header">
+      <h1 id="logo">
+        <span class="logo-chrono">Chrono</span><span class="logo-type">Type</span>
+      </h1>
+
+      <div id="live-metrics">
+        <div class="metric-pill" id="timer-pill">
+          <span class="metric-label">time</span>
+          <span class="metric-value" id="timer-display">15</span>
+        </div>
+        <div class="metric-pill" id="wpm-pill">
+          <span class="metric-label">wpm</span>
+          <span class="metric-value" id="wpm-display">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="typing-area">
+      <div id="words-container">
+      </div>
+      <p id="restart-hint">press <kbd>Tab</kbd> + <kbd>Enter</kbd> to restart</p>
+    </main>
+
+    <section id="results-screen">
+      <h2 id="results-title">Results</h2>
+
+      <div id="svm-section">
+        <div id="svm-loading">&#9203; analyzing your typing pattern&hellip;</div>
+        <div id="svm-guess">
+          <p id="svm-label">the svm thinks you are</p>
+          <p id="svm-prediction">&mdash;</p>
+          <p id="svm-subtext" class="svm-subtext"></p>
+          <p id="svm-question">is this correct?</p>
+          <div id="svm-buttons">
+            <button id="svm-yes-btn">&#10003;&nbsp; yes, correct</button>
+            <button id="svm-no-btn">&#10007;&nbsp; no, wrong</button>
+          </div>
+        </div>
+      </div>
+      <div id="results-grid">
+        <div class="result-card result-card--hero" id="result-wpm">
+          <span class="result-value" id="final-wpm">0</span>
+          <span class="result-label">wpm</span>
+        </div>
+      </div>
+
+
+
+      <p id="save-status"></p>
+
+      <div id="results-grid-stats">
+        <div class="result-card" id="result-accuracy">
+          <span class="result-value" id="final-accuracy">0%</span>
+          <span class="result-label">accuracy</span>
+        </div>
+        <div class="result-card" id="result-chars">
+          <span class="result-value" id="final-chars">0</span>
+          <span class="result-label">characters</span>
+        </div>
+        <div class="result-card" id="result-errors">
+          <span class="result-value" id="final-errors">0</span>
+          <span class="result-label">errors</span>
+        </div>
+        <div class="result-card" id="result-regressions">
+          <span class="result-value" id="final-regressions">0</span>
+          <span class="result-label">regressions</span>
+        </div>
+        <div class="result-card" id="result-error-rate">
+          <span class="result-value" id="final-error-rate">0%</span>
+          <span class="result-label">error rate</span>
+        </div>
+        <div class="result-card" id="result-time">
+          <span class="result-value" id="final-time">0s</span>
+          <span class="result-label">time</span>
+        </div>
+
+        <div class="result-section-divider">
+          <span class="result-section-label">keystroke biometrics</span>
+        </div>
+
+        <div class="result-card result-card--bio" id="result-dwell">
+          <span class="result-value" id="final-dwell">0ms</span>
+          <span class="result-label">avg dwell</span>
+        </div>
+        <div class="result-card result-card--bio" id="result-flight">
+          <span class="result-value" id="final-flight">0ms</span>
+          <span class="result-label">avg flight</span>
+        </div>
+        <div class="result-card result-card--bio" id="result-burstiness">
+          <span class="result-value" id="final-burstiness">0</span>
+          <span class="result-label">burstiness</span>
+        </div>
+
+        <div class="result-card result-card--bio" id="result-rollovers">
+          <span class="result-value" id="final-rollovers">0</span>
+          <span class="result-label">rollovers</span>
+        </div>
+        <div class="result-card result-card--bio" id="result-shift-pref">
+          <span class="result-value" id="final-shift-pref">&mdash;</span>
+          <span class="result-label">shift pref</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" style="display:none">try again</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

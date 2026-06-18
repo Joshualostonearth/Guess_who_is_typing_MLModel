@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Python virtual environment
+venv/
+
+# Trained model files (regenerated via `python MLSVM.py --train`)
+svm_model.pkl
+svm_scaler.pkl
+svm_features.pkl
+
+# Training data (personal biometric data)
+user_typing_data.csv
+
+# OS files
+.DS_Store
+Thumbs.db
