@@ -190,7 +190,7 @@ def predict(session_json_str):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='ChronoType SVM — train or predict')
+    parser = argparse.ArgumentParser(description='GuessTyper SVM — train or predict')
     parser.add_argument('--train',   action='store_true', help='Train the model on CSV data')
     parser.add_argument('--predict', action='store_true', help='Read session JSON from stdin and classify')
     args = parser.parse_args()
